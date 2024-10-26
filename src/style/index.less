@@ -1,0 +1,210 @@
+// 全局公共样式
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 0.28rem;
+  line-height: 0.44rem;
+  color: #061023;
+  background-color: #fff;
+  user-select: none;
+  font-family: "PingFang SC", sans-serif;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+:root {
+  --main-color: @mainColor;
+  --main-text-color: @mainTextColor;
+}
+
+#app {
+  max-width: 750px;
+  margin: 0 auto;
+  background-color: #fff;
+  line-height: 1;
+}
+
+/* 隐藏滚动条但保持滚动功能 */
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+div {
+  box-sizing: border-box;
+  font-size: inherit;
+  // transition: all .3s ease;
+  // transition-property: background-color, width, height, border, margin, padding,
+  //   opacity, transform, color;
+  // transition-duration: 0.3s;
+  // transition-timing-function: ease;
+}
+
+div::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.max-width {
+  max-width: 750px;
+}
+
+@media (min-width: 751px) {
+  #app {
+    max-width: 375px;
+    overflow-y: auto;
+  }
+
+  .max-width {
+    max-width: 375px;
+  }
+}
+
+// 涨跌效果
+.up {
+  color: @up !important;
+}
+
+.up_bg {
+  background-color: @up !important;
+}
+
+.down_bg {
+  background-color: @down !important;
+}
+
+.down {
+  color: @down !important;
+}
+
+// 页面
+.app_scroll {
+  width: 100%;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+.page {
+  width: 100%;
+  min-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #fff;
+  -webkit-overflow-scrolling: touch;
+}
+
+.page_loading {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+}
+
+input {
+  border: none;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 0.28rem;
+  transition: all ease 0.2s;
+
+  &:focus {
+    color: #014cfa !important;
+  }
+}
+
+// 点击效果
+.ripple_button {
+  position: relative;
+}
+
+.ripple_button:active {
+  filter: invert(0.2);
+}
+
+.ripple_text {
+  position: relative;
+}
+
+.ripple_text:active {
+  filter: invert(0.2);
+}
+
+.fn-12 {
+  font-size: 12px;
+}
+
+/* 针对 Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* 针对 Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.mr-5 {
+  margin-right: 0.1rem;
+}
+
+.mr-10 {
+  margin-right: 0.2rem;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+.item {
+  &:has(.ipt:focus) {
+    border: 1px solid #014cfa !important;
+  }
+  .ipt::placeholder {
+    color: #a4acb9;
+  }
+}
+
+@font-face {
+  font-family: "PingFang SC";
+  src: url("../assets/font/PingFang (Regular).ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PingFang SC";
+  src: url("../assets/font/PingFang (Semibold).ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AlibabaPuHuiTi";
+  src: url("../assets/font/Alibaba-PuHuiTi-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AlibabaPuHuiTi";
+  src: url("../assets/font/Alibaba-PuHuiTi-Bold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
